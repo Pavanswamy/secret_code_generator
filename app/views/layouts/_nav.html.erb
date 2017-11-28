@@ -1,0 +1,21 @@
+<nav class="navbar navbar-inverse">
+  <div class="navbar-header">
+    <a href="#" class="navbar-brand" id='nav-text'>Assignment</a>
+  </div>
+  <div id="navbarCollapse" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+			  <li>
+			  	<%= link_to('Logout', destroy_user_session_path, method: :delete, id: 'nav-text') %>
+			  </li>
+			<% else %>
+			  <li>
+			  	<%= link_to('Login', new_user_session_path, id: 'nav-text') %>
+			  </li>
+  			<li>
+    			<%= link_to('Register', new_user_registration_path, id: 'nav-text') %>  
+  			</li>
+			<% end %>
+    </ul>
+  </div>
+</nav>

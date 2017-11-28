@@ -1,0 +1,9 @@
+<% if current_user.present? && current_user.admin? %>
+  <h3 class='notify'>Welcome <%= current_user.first_name rescue nil%></h3>
+<% elsif current_user.present? %>
+  <h3 class='notify'>Welcome <%= current_user.first_name rescue nil%></h3>
+<% else %>
+  <h3 class='notify'>Welcome !!</h3>
+<%end%>
+
+<p id="notice"><%= notice %></p>
